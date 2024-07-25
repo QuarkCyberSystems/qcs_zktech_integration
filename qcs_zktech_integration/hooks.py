@@ -133,7 +133,12 @@ app_license = "mit"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
+scheduler_events = {
+    "cron": {
+        "30 23 * * *": [
+            "qcs_zktech_integration.controller.zktech_bio.get_transactions"
+        ]
+    }
 # 	"all": [
 # 		"qcs_zktech_integration.tasks.all"
 # 	],
@@ -149,7 +154,7 @@ app_license = "mit"
 # 	"monthly": [
 # 		"qcs_zktech_integration.tasks.monthly"
 # 	],
-# }
+}
 
 # Testing
 # -------
