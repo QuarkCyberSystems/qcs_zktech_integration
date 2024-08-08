@@ -75,23 +75,23 @@ def get_transactions(from_date, to_date):
                 integration_log_entry(message)
 
     except requests.exceptions.HTTPError as http_err:
-        message = f'HTTP error occurred: {http_err}'
+        message = f'HTTP error has occurred: {http_err}'
         integration_log_entry(message)
 
     except requests.exceptions.ConnectionError as conn_err:
-        message = f'Connection error occurred: {conn_err}'
+        message = f'Connection error has occurred: {conn_err}'
         integration_log_entry(message)
 
     except requests.exceptions.Timeout as timeout_err:
-        message = f'Timeout error occurred: {timeout_err}'
+        message = f'Timeout error has occurred: {timeout_err}'
         integration_log_entry(message)
 
     except requests.exceptions.RequestException as req_err:
-        message = f'An error occurred: {req_err}'
+        message = f'An error has occurred: {req_err}'
         integration_log_entry(message)
 
     except Exception as err:
-        message = f'An unexpected error occurred: {err}'
+        message = f'An unexpected error has occurred: {err}'
         integration_log_entry(message)
 
 
