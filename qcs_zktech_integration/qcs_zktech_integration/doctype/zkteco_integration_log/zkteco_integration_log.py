@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class ZKTeckAPISettings(Document):
+class ZKTecoIntegrationLog(Document):
 	pass

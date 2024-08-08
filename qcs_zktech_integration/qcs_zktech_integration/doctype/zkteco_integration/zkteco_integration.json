@@ -1,0 +1,95 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-08-08 18:19:23.447497",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "zkteco_api_credentials_section",
+  "api_url",
+  "username",
+  "password",
+  "integration_tools_section",
+  "from_date",
+  "fetch_transactions",
+  "column_break_itzw",
+  "to_date"
+ ],
+ "fields": [
+  {
+   "collapsible": 1,
+   "fieldname": "zkteco_api_credentials_section",
+   "fieldtype": "Section Break",
+   "label": "ZKTeco API Credentials"
+  },
+  {
+   "fieldname": "password",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Password",
+   "reqd": 1
+  },
+  {
+   "fieldname": "api_url",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "URL",
+   "reqd": 1
+  },
+  {
+   "fieldname": "username",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "User Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "integration_tools_section",
+   "fieldtype": "Section Break",
+   "label": "Integration Tools"
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date"
+  },
+  {
+   "fieldname": "fetch_transactions",
+   "fieldtype": "Button",
+   "label": "Fetch Transactions"
+  },
+  {
+   "fieldname": "column_break_itzw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date"
+  }
+ ],
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-08-08 22:19:31.650366",
+ "modified_by": "Administrator",
+ "module": "Qcs Zktech Integration",
+ "name": "ZKTeco Integration",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

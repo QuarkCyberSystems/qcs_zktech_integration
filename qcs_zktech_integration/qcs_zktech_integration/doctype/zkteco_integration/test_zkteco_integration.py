@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestZKTeckAPIErrorLog(FrappeTestCase):
+class TestZKTecoIntegration(FrappeTestCase):
 	pass

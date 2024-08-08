@@ -134,26 +134,9 @@ app_license = "mit"
 # ---------------
 
 scheduler_events = {
-    "cron": {
-        "30 23 * * *": [
-            "qcs_zktech_integration.controller.zktech_bio.get_transactions"
-        ]
-    }
-# 	"all": [
-# 		"qcs_zktech_integration.tasks.all"
-# 	],
-# 	"daily": [
-# 		"qcs_zktech_integration.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"qcs_zktech_integration.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"qcs_zktech_integration.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"qcs_zktech_integration.tasks.monthly"
-# 	],
+	"daily": [
+		"qcs_zktech_integration.qcs_zktech_integration.doctype.zkteco_integration.zkteco_integration.daily_sync_transactions"
+	]
 }
 
 # Testing
@@ -231,4 +214,3 @@ scheduler_events = {
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
-
