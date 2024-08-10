@@ -15,8 +15,10 @@ class ZKTecoIntegration(Document):
 
 
 def daily_sync_transactions():
-    sync_date = add_to_date(today(), days=-1)
-    get_transactions(sync_date, sync_date)
+    enable_daily_sync = frappe.db.get_single_value('ZKTeco Integration', 'enable_daily_sync')
+    if enable_daily_sync == 1:
+        sync_date = add_to_date(today(), days=-1)
+        get_transactions(sync_date, sync_date)
 
 
 @frappe.whitelist()

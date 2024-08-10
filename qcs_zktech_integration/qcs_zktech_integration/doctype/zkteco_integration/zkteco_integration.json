@@ -9,6 +9,8 @@
   "api_url",
   "username",
   "password",
+  "column_break_jmbl",
+  "enable_daily_sync",
   "integration_tools_section",
   "from_date",
   "fetch_transactions",
@@ -66,13 +68,23 @@
    "fieldname": "to_date",
    "fieldtype": "Date",
    "label": "To Date"
+  },
+  {
+   "fieldname": "column_break_jmbl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_daily_sync",
+   "fieldtype": "Check",
+   "label": "Enable Daily Sync"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2024-08-08 22:19:31.650366",
+ "modified": "2024-08-09 12:19:24.374573",
  "modified_by": "Administrator",
  "module": "Qcs Zktech Integration",
  "name": "ZKTeco Integration",
