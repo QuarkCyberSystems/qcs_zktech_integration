@@ -60,40 +60,43 @@ def get_transactions(from_date, to_date):
                         check_in_doc = frappe.new_doc('Employee Checkin')
                         punch_time_dt = datetime.strptime(record.get('punch_time'), '%Y-%m-%d %H:%M:%S')
                         if record.get('punch_state_display') == 'Check In':
-                            check_in_doc.update({
-                                'employee': employee,
-                                'log_type': 'IN',
-                                'time': punch_time_dt
-                            })
+                            log_type = 'IN'
                         else:
+                            log_type = 'OUT'
+                        if not frappe.db.exists('Employee Checkin', {'employee': employee, 'time': punch_time_dt, 'log_type': log_type}):
                             check_in_doc.update({
                                 'employee': employee,
-                                'log_type': 'OUT',
+                                'log_type': log_type,
                                 'time': punch_time_dt
                             })
-                        check_in_doc.save(ignore_permissions=True)
+                            check_in_doc.save(ignore_permissions=True)
             else:
                 message = 'No data found'
                 integration_log_entry(message)
 
     except requests.exceptions.HTTPError as http_err:
         message = f'HTTP error has occurred: {http_err}'
+        frappe.db.set_value('ZKTeco Integration', 'ZKTeco Integration', 'status', 'Inactive')
         integration_log_entry(message)
 
     except requests.exceptions.ConnectionError as conn_err:
         message = f'Connection error has occurred: {conn_err}'
+        frappe.db.set_value('ZKTeco Integration', 'ZKTeco Integration', 'status', 'Inactive')
         integration_log_entry(message)
 
     except requests.exceptions.Timeout as timeout_err:
         message = f'Timeout error has occurred: {timeout_err}'
+        frappe.db.set_value('ZKTeco Integration', 'ZKTeco Integration', 'status', 'Inactive')
         integration_log_entry(message)
 
     except requests.exceptions.RequestException as req_err:
         message = f'An error has occurred: {req_err}'
+        frappe.db.set_value('ZKTeco Integration', 'ZKTeco Integration', 'status', 'Inactive')
         integration_log_entry(message)
 
     except Exception as err:
         message = f'An unexpected error has occurred: {err}'
+        frappe.db.set_value('ZKTeco Integration', 'ZKTeco Integration', 'status', 'Inactive')
         integration_log_entry(message)
 
 
